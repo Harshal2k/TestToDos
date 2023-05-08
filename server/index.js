@@ -1,11 +1,14 @@
 const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // Import Routes files
 const todoRoutes = require('./routes/todos');
 
 const app = express();
+
+app.use(cors()); // Enable CORS
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
